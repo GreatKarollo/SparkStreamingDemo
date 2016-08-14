@@ -12,31 +12,25 @@ def random_generator(size=6, chars=string.ascii_lowercase + string.digits):
 
 
 region = 'us-east-1'
-kinesisStreamName = 'spark-demo'
+kinesisStreamName = 'spark-demo-2'
 
 kinesis = kinesis.connect_to_region(region)
 
+# generating data and feeding kinesis.
 
 while True:
 
-
-    y = random_generator(10,"memrise2016")
-
-    action = ['action1','action2','action3','action3','action4']
-    x = random.randint(0,4)
-    user_id = random.randint(25,35)+1200
-    device_id = random.randint(55,60)+150000
-
+    urls = ['web1.com','web2.com','web3.com','web4.com','web5.com',web6.com','web7.com']
+    x = random.randint(0,7)
+    device_id = random.randint(55,60)+150000 
+    
     now = datetime.now()
     timestamp = str(now.month) + "/" + str(now.day) + "/" + str(now.year) + " " + str(now.hour) + ":" +str(now.minute) + ":" + str(now.second)
 
-
-    #building the pay load for kinesis puts.
-
-    putString = str(user_id)+',' + str(device_id)+','+action[x]+','+timestamp
+    putString = str(device_id)+','+'www.'+urls[x]+','+timestamp
     patitionKey = random.choice('abcdefghij')
 
-    # schema of the imput string now user_id,device_id,action,timestamp
+    # schema of the imput string now device_id,domain,timestamp
 
     print putString
 

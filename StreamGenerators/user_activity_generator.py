@@ -20,7 +20,6 @@ kinesis = kinesis.connect_to_region(region)
 while True:
 
 
-    y = random_generator(10,"memrise2016")
 
     action = ['action1','action2','action3','action3','action4']
     x = random.randint(0,4)

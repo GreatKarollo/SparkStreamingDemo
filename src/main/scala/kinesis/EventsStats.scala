@@ -17,7 +17,7 @@ object EventsStats {
     val interval = Seconds(5)
 
     val spark = new StreamingContext(
-      new SparkConf().setMaster("spark://ec2-52-90-169-39.compute-1.amazonaws.com:7077")
+      new SparkConf().setMaster("spark://ec2-54-89-117-210.compute-1.amazonaws.com:7077")
         .setAppName("spark-demo")
         .set("spark.streaming.stopGracefullyOnShutdown", "true"), interval)
 
@@ -33,13 +33,21 @@ object EventsStats {
           checkpointInterval      = interval,
           initialPositionInStream = InitialPositionInStream.LATEST)
       }
+
     )
+
+
+
 
     dstream
       .flatMap(new String(_) split ",")
       .map(_ -> 1)
       .reduceByKey(_ + _)
       .print()
+
+    spark.start()
+    spark.stop(stopSparkContext=false, stopGracefully=true)
+
 
 
   }

@@ -4,7 +4,7 @@
 		module="sparkstreamkinesis$sbt_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20160815235520"
+		publication="20160816090727"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>

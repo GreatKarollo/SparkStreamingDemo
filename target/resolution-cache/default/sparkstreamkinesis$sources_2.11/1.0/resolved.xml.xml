@@ -4,7 +4,7 @@
 		module="sparkstreamkinesis$sources_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20160815235524"
+		publication="20160816090730"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

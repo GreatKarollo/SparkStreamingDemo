@@ -12,7 +12,7 @@ def random_generator(size=6, chars=string.ascii_lowercase + string.digits):
 
 
 region = 'us-east-1'
-kinesisStreamName = 'spark-demo-2'
+kinesisStreamName = 'stream1'
 
 kinesis = kinesis.connect_to_region(region)
 

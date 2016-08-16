@@ -704,9 +704,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.8!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
-[debug] :: resolution report :: resolve 2727ms :: artifacts dl 81ms
+[debug] :: resolution report :: resolve 2257ms :: artifacts dl 54ms
 [debug] 	report for default#sparkstreamkinesis$sbt_2.11;1.0 default produced in /Users/karolsudol/SparkStreamKinesis/target/resolution-cache/reports/default-sparkstreamkinesis$sbt_2.11-default.xml
-[debug] 	resolve done (2727ms resolve - 81ms download)
+[debug] 	resolve done (2257ms resolve - 54ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#sparkstreamkinesis$sources_2.11;1.0
 [debug] 	confs: [default]
@@ -1070,6 +1070,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_8_2;0.13.8!precompiled-2_8_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_2;0.13.8!precompiled-2_9_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.8!precompiled-2_9_3.jar(src)
-[debug] :: resolution report :: resolve 642ms :: artifacts dl 70ms
+[debug] :: resolution report :: resolve 300ms :: artifacts dl 47ms
 [debug] 	report for default#sparkstreamkinesis$sources_2.11;1.0 default produced in /Users/karolsudol/SparkStreamKinesis/target/resolution-cache/reports/default-sparkstreamkinesis$sources_2.11-default.xml
-[debug] 	resolve done (642ms resolve - 70ms download)
+[debug] 	resolve done (300ms resolve - 47ms download)

@@ -1,4 +1,4 @@
-__author__ = 'Karol_Sudol'
+__author__ = 'Amo Abeyaratne'
 
 import string
 import random
@@ -11,31 +11,34 @@ def random_generator(size=6, chars=string.ascii_lowercase + string.digits):
     return ''.join(random.choice(chars) for x in range(size))
 
 
+ #connecting to Kinesis stream
+
 region = 'us-east-1'
 kinesisStreamName = 'stream1'
 
 kinesis = kinesis.connect_to_region(region)
 
+# generating data and feeding kinesis.
 
 while True:
 
 
+    y = random_generator(10,"techsummit2015")
 
-    action = ['action1','action2','action3','action3','action4']
+    urls = ['foo.com','amazon.com','testing.com','google.com','sydney.com']
     x = random.randint(0,4)
-    user_id = random.randint(25,35)+1200
-    device_id = random.randint(55,60)+150000
+    userid = random.randint(25,35)+1200
 
     now = datetime.now()
-    timestamp = str(now.month) + "/" + str(now.day) + "/" + str(now.year) + " " + str(now.hour) + ":" +str(now.minute) + ":" + str(now.second)
+    timeformatted = str(now.month) + "/" + str(now.day) + "/" + str(now.year) + " " + str(now.hour) + ":" +str(now.minute) + ":" + str(now.second)
 
 
     #building the pay load for kinesis puts.
 
-    putString = str(user_id)+',' + str(device_id)+','+action[x]+','+timestamp
+    putString = str(userid)+','+'www.'+urls[x]+'/'+y+','+timeformatted
     patitionKey = random.choice('abcdefghij')
 
-    # schema of the imput string now user_id,device_id,action,timestamp
+    # schema of the imput string now userid,url,timestamp
 
     print putString
 

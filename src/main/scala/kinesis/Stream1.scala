@@ -45,6 +45,8 @@ object Stream1 extends App {
 
   val unionStreams = ssc.union(kinesisStreams)
 
+  unionStreams.tran
+
   // Convert each line of Array[Byte] to String, and split into words
   val words = unionStreams.flatMap(byteArray => new String(byteArray).split(" "))
 

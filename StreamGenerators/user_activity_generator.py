@@ -27,8 +27,7 @@ while True:
     device_id = random.randint(55,60)+150000
 
     now = datetime.now()
-    timestamp = str(now.month) + "/" + str(now.day) + "/" + str(now.year) + " " + str(now.hour) + ":" +str(now.minute) + ":" + str(now.second)
-
+    timestamp = str(now.year) + "-" + str(now.month) + "-" + str(now.day) + " " + str(now.hour) + ":" +str(now.minute) + ":" + str(now.second)
 
     #building the pay load for kinesis puts.
 

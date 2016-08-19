@@ -12,7 +12,7 @@ def random_generator(size=6, chars=string.ascii_lowercase + string.digits):
 
 
 region = 'us-east-1'
-kinesisStreamName = 'stream1'
+kinesisStreamName = 'stream2'
 
 kinesis = kinesis.connect_to_region(region)
 
@@ -20,17 +20,16 @@ kinesis = kinesis.connect_to_region(region)
 
 while True:
 
-    urls = ['web1.com','web2.com','web3.com','web4.com','web5.com',web6.com','web7.com']
-    x = random.randint(0,7)
+    urls = ['web1.com','web2.com','web3.com','web4.com','web5.com','web6.com','web7.com']
+    x = random.randint(0,6)
     device_id = random.randint(55,60)+150000 
     
     now = datetime.now()
-    timestamp = str(now.month) + "/" + str(now.day) + "/" + str(now.year) + " " + str(now.hour) + ":" +str(now.minute) + ":" + str(now.second)
-
+    timestamp = str(now.year) + "-" + str(now.month) + "-" + str(now.day) + " " + str(now.hour) + ":" +str(now.minute) + ":" + str(now.second)
     putString = str(device_id)+','+'www.'+urls[x]+','+timestamp
     patitionKey = random.choice('abcdefghij')
 
-    # schema of the imput string now device_id,domain,timestamp
+    # schema of the imput string now device_id,urls,timestamp
 
     print putString
 
